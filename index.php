@@ -30,20 +30,20 @@ $gambar = [
 
 <body class="d-flex flex-column vh-100">
   <nav class="navbar navbar-expand navbar-light">
-    <div class="container mt-2 d-flex flex-column flex-sm-row">
+    <div class="container mt-2 d-flex flex-column flex-sm-row border-bottom">
       <a class="navbar-brand" href="" style="font-size: 24px;">BAJUKITA</a>
 
       <div class="navbar-collapse" id="navbar">
         <div class="navbar-nav ms-auto">
-          <a class="nav-link active" href="#">
+          <a class="nav-link active" href="index.php">
             <i class="bi-house"></i>
             Home
           </a>
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="produk.php">
             <i class="bi-bag"></i>
             Produk
           </a>
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="kontak.php">
             <i class="bi-telephone"></i>
             Kontak
           </a>
@@ -52,8 +52,20 @@ $gambar = [
     </div>
   </nav>
 
-  <main class="container my-5">
+  <main class="container mb-5 mt-4">
     <section>
+      <article>
+        <div class="d-flex mb-2 justify-content-end">
+          <div class="col-lg-2 d-flex align-items-center">
+            <div class="input-group">
+            <input type="text" class="form-control form-control-sm" placeholder="Masukan kata kunci">
+            <button class="btn btn-sm btn-dark">
+              <i class="bi-search"></i>
+            </button>
+            </div>
+          </div>
+        </div>
+      </article>
       <article>
         <div id="carouselTop" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-indicators">
@@ -113,16 +125,18 @@ $gambar = [
         <h4 class="border-bottom pb-2">Produk Rekomendasi</h4>
         <div class="row">
           <?php foreach ($gambar as $g) : ?>
-            <div class="col-lg-3">
-              <div class="card mb-2">
-                <img src="images/small1.jpg" class="card-img-top"></img>
-                <div class="card-body">
-                  <div class="text-center">
-                    <h6 class="font-weight-bold"><?= $g['nama'] ?></h6>
-                    <span class="text-muted small"><?= $g['harga'] ?></span>
+            <div class="col-lg-3 col-sm-4 col-6">
+              <a href="#" class="text-reset text-decoration-none">
+                <div class="card mb-2">
+                  <img src="images/small1.jpg" class="card-img-top"></img>
+                  <div class="card-body">
+                    <div class="text-center">
+                      <h6 class="font-weight-bold"><?= $g['nama'] ?></h6>
+                      <span class="text-muted small"><?= $g['harga'] ?></span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           <?php endforeach ?>
         </div>
