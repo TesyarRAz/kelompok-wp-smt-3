@@ -21,7 +21,7 @@ include_once 'inc.php';
 
 <body class="d-flex flex-column vh-100">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="container mt-2 d-flex flex-column flex-sm-row">
+    <div class="container mt-2 d-flex flex-column flex-md-row">
       <a class="navbar-brand m-auto fw-bold" href="index.php" style="font-size: 24px;">BAJUKITA</a>
 
       <div class="navbar-collapse mt-2 mt-md-0" id="navbar">
@@ -53,17 +53,15 @@ include_once 'inc.php';
 
   <main class="container mb-5 mt-4">
     <section>
-      <article>
-        <div class="d-flex mb-2 justify-content-end">
-          <div class="col-lg-2 d-flex align-items-center">
-            <div class="input-group">
-              <input type="text" class="form-control form-control-sm" placeholder="Masukan kata kunci">
-              <button class="btn btn-sm btn-dark">
-                <i class="bi-search"></i>
-              </button>
-            </div>
+      <article class="mb-1 d-flex justify-content-end">
+        <form class="justify-content-end d-flex align-items-center gap-2" action="produk.php" method="GET">
+          <div class="input-group">
+            <input type="text" class="form-control form-control-sm" placeholder="Masukan kata kunci" name="cari">
+            <button type="submit" class="btn btn-sm btn-dark">
+              <i class="bi-search"></i>
+            </button>
           </div>
-        </div>
+        </form>
       </article>
       <article>
         <div id="carouselTop" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -74,13 +72,13 @@ include_once 'inc.php';
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/slide1.jpg" class="d-block w-100" alt="slide" />
+              <img src="images/banner1.jpg" class="d-block w-100" alt="slide" />
             </div>
             <div class="carousel-item">
-              <img src="images/slide1.jpg" class="d-block w-100" alt="slide" />
+              <img src="images/banner2.jpg" class="d-block w-100" alt="slide" />
             </div>
             <div class="carousel-item">
-              <img src="images/slide1.jpg" class="d-block w-100" alt="slide" />
+              <img src="images/banner3.jpg" class="d-block w-100" alt="slide" />
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselTop" data-bs-slide="prev">

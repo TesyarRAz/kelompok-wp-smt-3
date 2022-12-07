@@ -27,7 +27,7 @@ $item = $produk[$_GET['id'] - 1];
 
 <body class="d-flex flex-column vh-100">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="container mt-2 d-flex flex-column flex-sm-row">
+    <div class="container mt-2 d-flex flex-column flex-md-row">
       <a class="navbar-brand m-auto fw-bold" href="index.php" style="font-size: 24px;">BAJUKITA</a>
 
       <div class="navbar-collapse mt-2 mt-md-0" id="navbar">
@@ -63,10 +63,12 @@ $item = $produk[$_GET['id'] - 1];
       <article class="col d-flex flex-column align-items-center mb-5">
         <img src="<?= $item['image'] ?>" width="300" height="300" alt="toko" class="rounded">
       </article>
-      <article class="col d-flex flex-column justify-content-center align-items-start mb-5">
-        <h5 class="text-center fw-bold"><?= $item['nama'] ?></h5>
-        <h4 class="text-center mt-2"><?= $item['harga'] ?></h4>
-        <h5 class="text-center mt-2"><?= $item['kategori'] ?></h5>
+      <article class="col d-flex flex-column justify-content-center align-items-center align-items-md-start mb-5">
+        <h2 class="text-center fw-bold"><?= $item['nama'] ?></h2>
+        <h4 class="text-center mt-2">Kategori: <?= $kategori[$item['kategori']] ?></h4>
+        <h5 class="text-center mt-2">Bahan: <?= $item['bahan'] ?></h5>
+        <h5 class="text-center mt-2">Stok: <?= $item['stok'] ?></h5>
+        <h5 class="text-center mt-2">Harga: <?= $item['harga'] ?></h5>
       </article>
     </section>
   </main>

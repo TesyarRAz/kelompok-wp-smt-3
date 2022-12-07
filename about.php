@@ -17,7 +17,7 @@
 
 <body class="d-flex flex-column vh-100">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="container mt-2 d-flex flex-column flex-sm-row">
+    <div class="container mt-2 d-flex flex-column flex-md-row">
       <a class="navbar-brand m-auto fw-bold" href="index.php" style="font-size: 24px;">BAJUKITA</a>
 
       <div class="navbar-collapse mt-2 mt-md-0" id="navbar">
@@ -58,7 +58,7 @@
         </p>
       </article>
       <article class="col d-flex flex-column align-items-end mb-5">
-        <img src="images/big1.jpg" width="300" height="300" alt="toko" class="rounded">
+        <img src="images/about.jpg" width="300" height="300" alt="toko" class="rounded">
       </article>
     </section>
   </main>

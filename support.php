@@ -17,7 +17,7 @@
 
 <body class="d-flex flex-column vh-100">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <div class="container mt-2 d-flex flex-column flex-sm-row">
+        <div class="container mt-2 d-flex flex-column flex-md-row">
             <a class="navbar-brand" href="index.php" style="font-size: 24px;">BAJUKITA</a>
 
             <div class="navbar-collapse mt-2 mt-md-0" id="navbar">
@@ -50,26 +50,34 @@
     <main class="container mb-5 mt-4">
         <h4 class="text-center fw-bold">Tim Kami</h4>
 
-        <section class="d-flex flex-column flex-md-row justify-content-between m-auto mt-5 p-5 rounded">
-            <article class="col d-flex flex-column align-items-center text-center mb-5">
-                <img src="images/big1.jpg" class="rounded-2" alt="ihsan" width="250" height="250">
-                <span class="mt-2 mb-2" style="font-size: 18px">Muhammad Ihsan Permana</span>
-                <span style="font-size: 15px;">15210103</span>
+        <section class="row m-auto mt-5 p-5 rounded">
+            <article class="col-12 col-md-6 col-xl-3">
+                <div class="d-flex flex-column align-items-center text-center mb-5">
+                    <img src="images/ihsan.jpeg" class="rounded-2" style="object-fit: cover" alt="ihsan" width="250" height="250">
+                    <span class="mt-2 mb-2" style="font-size: 18px">Muhammad Ihsan Permana</span>
+                    <span style="font-size: 15px;">15210103</span>
+                </div>
             </article>
-            <article class="col d-flex flex-column align-items-center text-center mb-5">
-                <img src="images/big1.jpg" class="rounded-2" alt="tesyar" width="250" height="250">
-                <span class="mt-2 mb-2" style="font-size: 18px">Mohamad Tesyar Razbani</span>
-                <span style="font-size: 15px;">15210264</span>
+            <article class="col-12 col-md-6 col-xl-3">
+                <div class="d-flex flex-column align-items-center text-center mb-5">
+                    <img src="images/tesyar.jpg" class="rounded-2" style="object-fit: cover" alt="tesyar" width="250" height="250">
+                    <span class="mt-2 mb-2" style="font-size: 18px">Mohamad Tesyar Razbani</span>
+                    <span style="font-size: 15px;">15210264</span>
+                </div>
             </article>
-            <article class="col d-flex flex-column align-items-center text-center mb-5">
-                <img src="images/big1.jpg" class="rounded-2" alt="diki" width="250" height="250">
-                <span class="mt-2 mb-2" style="font-size: 18px">M. Diki Ramlan</span>
-                <span style="font-size: 15px;">15210278</span>
+            <article class="col-12 col-md-6 col-xl-3">
+                <div class="d-flex flex-column align-items-center text-center mb-5">
+                    <img src="images/diki.jpg" class="rounded-2" style="object-fit: cover" alt="diki" width="250" height="250">
+                    <span class="mt-2 mb-2" style="font-size: 18px">M. Diki Ramlan</span>
+                    <span style="font-size: 15px;">15210278</span>
+                </div>
             </article>
-            <article class="col d-flex flex-column align-items-center text-center mb-5">
-                <img src="images/big1.jpg" class="rounded-2" alt="diki" width="250" height="250">
-                <span class="mt-2 mb-2" style="font-size: 18px">Nurul Fauziah</span>
-                <span style="font-size: 15px;">15210262</span>
+            <article class="col-12 col-md-6 col-xl-3">
+                <div class="d-flex flex-column align-items-center text-center mb-5">
+                    <img src="images/nurul.jpg" class="rounded-2" style="object-fit: cover" alt="diki" width="250" height="250">
+                    <span class="mt-2 mb-2" style="font-size: 18px">Nurul Fauziah</span>
+                    <span style="font-size: 15px;">15210262</span>
+                </div>
             </article>
         </section>
     </main>

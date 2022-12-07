@@ -17,7 +17,7 @@
 
 <body class="d-flex flex-column vh-100">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="container mt-2 d-flex flex-column flex-sm-row">
+    <div class="container mt-2 d-flex flex-column flex-md-row">
       <a class="navbar-brand m-auto fw-bold" href="index.php" style="font-size: 24px;">BAJUKITA</a>
 
       <div class="navbar-collapse mt-2 mt-md-0" id="navbar">
@@ -76,10 +76,13 @@
       </article>
     </section>
     <section class="d-flex flex-column flex-md-row m-auto mt-5 p-5">
-      <article class="col-md-5">
-        <h4>Kontak Kami</h4>
+      <article class="col-lg-5 d-none d-lg-flex justify-content-center flex-column text-center">
+        <h4 class="mb-0 fw-bold">Kontak Kami</h4>
+        <div style="font-size: 150px;">
+          <i class="bi-envelope-fill"></i>
+        </div>
       </article>
-      <article class="col-md-7">
+      <article class="col-lg-7 mx-auto">
         <div class="mb-2">
           <label for="nama" class="form-label">Nama</label>
           <div class="row">
