@@ -1,30 +1,14 @@
 <?php
-$gambar = [
-  ['nama' => 'Jaket Keren 1', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 2', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 3', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 4', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 5', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 6', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 7', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 8', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Sweater Keren 1', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Sweater Keren 2', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Sweater Keren 3', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Sweater Keren 4', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Sweater Keren 5', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Sweater Keren 6', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Sweater Keren 7', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Sweater Keren 8', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Turtle Neck Keren 1', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Turtle Neck Keren 2', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Turtle Neck Keren 3', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Turtle Neck Keren 4', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Turtle Neck Keren 5', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Turtle Neck Keren 6', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Turtle Neck Keren 7', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Turtle Neck Keren 8', 'harga' => 'Rp. 100.000'],
-];
+require_once 'inc.php';
+
+// Jika di url terdapat query kategori, maka coba filter produk berdasarkan kategori
+if (isset($_GET['kategori']) && $_GET['kategori'] != 'semua') {
+  $produk = array_filter($produk, fn ($g) => $g['kategori'] == $_GET['kategori']);
+}
+
+if (isset($_GET['cari']) && !empty($_GET['cari'])) {
+  $produk = array_filter($produk, fn ($g) => str_contains(strtolower($g['nama']), strtolower($_GET['cari'])));
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,21 +31,29 @@ $gambar = [
 <body class="d-flex flex-column vh-100">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <div class="container mt-2 d-flex flex-column flex-sm-row">
-      <a class="navbar-brand" href="" style="font-size: 24px;">BAJUKITA</a>
+      <a class="navbar-brand m-auto fw-bold" href="index.php" style="font-size: 24px;">BAJUKITA</a>
 
-      <div class="navbar-collapse" id="navbar">
+      <div class="navbar-collapse mt-2 mt-md-0" id="navbar">
         <div class="navbar-nav ms-auto">
           <a class="nav-link" href="index.php">
-            <i class="bi-house"></i>
-            Home
+            <i class="text-center d-block d-md-inline-block bi-house"></i>
+            <span>Home</span>
           </a>
           <a class="nav-link active" href="produk.php">
-            <i class="bi-bag"></i>
-            Produk
+            <i class="text-center d-block d-md-inline-block bi-bag"></i>
+            <span>Produk</span>
           </a>
           <a class="nav-link" href="kontak.php">
-            <i class="bi-telephone"></i>
-            Kontak
+            <i class="text-center d-block d-md-inline-block bi-telephone"></i>
+            <span>Kontak</span>
+          </a>
+          <a class="nav-link" href="support.php">
+            <i class="text-center d-block d-md-inline-block bi-people"></i>
+            <span>Dukungan</span>
+          </a>
+          <a class="nav-link" href="about.php">
+            <i class="text-center d-block d-md-inline-block bi-exclamation-circle"></i>
+            <span>Tentang</span>
           </a>
         </div>
       </div>
@@ -69,55 +61,54 @@ $gambar = [
   </nav>
 
   <main class="container mb-5 mt-4">
-    <h4 class="pb-2">Daftar Produk</h4>
+    <h4 class="pb-2 fw-bold">Daftar Produk</h4>
     <section class="mb-3">
       <article class="mb-1 d-flex justify-content-end">
-        <div class="justify-content-end d-flex align-items-center gap-2">
+        <form class="justify-content-end d-flex align-items-center gap-2" action="produk.php" method="GET">
           <div class="input-group">
-            <input type="text" class="form-control form-control-sm" placeholder="Masukan kata kunci">
-            <button class="btn btn-sm btn-dark">
+            <input type="text" class="form-control form-control-sm" placeholder="Masukan kata kunci" name="cari">
+            <button type="submit" class="btn btn-sm btn-dark">
               <i class="bi-search"></i>
             </button>
           </div>
-        </div>
+        </form>
       </article>
       <article>
         <fieldset class="alert alert-secondary">
           <legend>Filter</legend>
-          <div class="d-flex">
+          <div class="d-flex flex-column flex-md-row">
             <div class="me-4">Kategori</div>
-            <div class="form-check me-3">
-              <input id="semua" type="radio" class="form-check-input me-1" value="semua" name="kategori" checked>
-              <label class="form-check-label" for="semua">Semua</label>
-            </div>
-            <div class="form-check me-3">
-              <input id="turtleneck" type="radio" class="form-check-input me-1" name="kategori" value="turtleneck">
-              <label class="form-check-label" for="turtleneck">Turtleneck</label>
-            </div>
-            <div class="form-check me-3">
-              <input id="jaket" type="radio" class="form-check-input me-1" name="kategori" value="jaket">
-              <label class="form-check-label" for="jaket">Jaket</label>
-            </div>
-            <div class="form-check me-3">
-              <input id="kaos" type="radio" class="form-check-input me-1" name="kategori" value="kaos">
-              <label class="form-check-label" for="kaos">Kaos</label>
-            </div>
+            <form class="d-flex flex-wrap" action="produk.php" id="form-filter" method="GET">
+              <div class="form-check me-3">
+                <input id="semua" type="radio" class="form-check-input me-1" value="semua" name="kategori" <?= isset($_GET['kategori']) ? ($_GET['kategori'] == 'semua' ? 'checked' : '') : 'checked' ?>>
+                <label class="form-check-label" for="semua">Semua</label>
+              </div>
+              <?php foreach ($kategori as $k => $v) : ?>
+                <div class="form-check me-3">
+                  <input id="<?= $k ?>" type="radio" class="form-check-input me-1" name="kategori" value="<?= $k ?>" <?= isset($_GET['kategori']) && $_GET['kategori'] == $k ? 'checked' : '' ?>>
+                  <label class="form-check-label" for="<?= $k ?>"><?= $v ?></label>
+                </div>
+              <?php endforeach ?>
+            </form>
           </div>
         </fieldset>
       </article>
     </section>
     <section class="row mt-3">
       <article class="col-12">
+        <?php if (isset($_GET['cari']) && !empty($_GET['cari'])) : ?>
+          <h6>Hasil Pencarian dari : <?= strip_tags($_GET['cari']) ?></h6>
+        <?php endif ?>
         <div class="row">
-          <?php foreach ($gambar as $g) : ?>
+          <?php foreach ($produk as $i => $p) : ?>
             <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-2">
-              <a href="#" class="text-reset text-decoration-none">
+              <a href="detail.php?id=<?= $i + 1 ?>" class="text-reset text-decoration-none">
                 <div class="card h-100">
-                  <img src="images/small1.jpg" class="card-img-top"></img>
+                  <img src="<?= $p['image'] ?>" class="card-img-top"></img>
                   <div class="card-body">
                     <div class="text-center">
-                      <h6 class="font-weight-bold"><?= $g['nama'] ?></h6>
-                      <span class="text-muted small"><?= $g['harga'] ?></span>
+                      <h6 class="font-weight-bold"><?= $p['nama'] ?></h6>
+                      <span class="text-muted small"><?= $p['harga'] ?></span>
                     </div>
                   </div>
                 </div>

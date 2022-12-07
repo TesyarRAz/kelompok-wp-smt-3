@@ -1,14 +1,5 @@
 <?php
-$gambar = [
-  ['nama' => 'Jaket Keren 1', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 2', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 3', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 4', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 5', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 6', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 7', 'harga' => 'Rp. 100.000'],
-  ['nama' => 'Jaket Keren 8', 'harga' => 'Rp. 100.000'],
-];
+include_once 'inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -31,21 +22,29 @@ $gambar = [
 <body class="d-flex flex-column vh-100">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <div class="container mt-2 d-flex flex-column flex-sm-row">
-      <a class="navbar-brand" href="" style="font-size: 24px;">BAJUKITA</a>
+      <a class="navbar-brand m-auto fw-bold" href="index.php" style="font-size: 24px;">BAJUKITA</a>
 
-      <div class="navbar-collapse" id="navbar">
+      <div class="navbar-collapse mt-2 mt-md-0" id="navbar">
         <div class="navbar-nav ms-auto">
           <a class="nav-link active" href="index.php">
-            <i class="bi-house"></i>
-            Home
+            <i class="text-center d-block d-md-inline-block bi-house"></i>
+            <span>Home</span>
           </a>
           <a class="nav-link" href="produk.php">
-            <i class="bi-bag"></i>
-            Produk
+            <i class="text-center d-block d-md-inline-block bi-bag"></i>
+            <span>Produk</span>
           </a>
           <a class="nav-link" href="kontak.php">
-            <i class="bi-telephone"></i>
-            Kontak
+            <i class="text-center d-block d-md-inline-block bi-telephone"></i>
+            <span>Kontak</span>
+          </a>
+          <a class="nav-link" href="support.php">
+            <i class="text-center d-block d-md-inline-block bi-people"></i>
+            <span>Dukungan</span>
+          </a>
+          <a class="nav-link" href="about.php">
+            <i class="text-center d-block d-md-inline-block bi-exclamation-circle"></i>
+            <span>Tentang</span>
           </a>
         </div>
       </div>
@@ -58,10 +57,10 @@ $gambar = [
         <div class="d-flex mb-2 justify-content-end">
           <div class="col-lg-2 d-flex align-items-center">
             <div class="input-group">
-            <input type="text" class="form-control form-control-sm" placeholder="Masukan kata kunci">
-            <button class="btn btn-sm btn-dark">
-              <i class="bi-search"></i>
-            </button>
+              <input type="text" class="form-control form-control-sm" placeholder="Masukan kata kunci">
+              <button class="btn btn-sm btn-dark">
+                <i class="bi-search"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -99,40 +98,30 @@ $gambar = [
     <section class="row mt-3">
       <aside class="col-lg-3">
         <div class="mb-3">
-          <h4>Daftar Kategori</h4>
+          <h4 class="fw-bold">Daftar Kategori</h4>
           <div class="list-group">
-            <a class="list-group-item list-group-item-action" href="#">
-              <i class="bi-check"></i>
-              Turtle Neck
-            </a>
-            <a class="list-group-item list-group-item-action" href="#">
-              <i class="bi-check"></i>
-              Kemeja
-            </a>
-            <a class="list-group-item list-group-item-action" href="#">
-              <i class="bi-check"></i>
-              Kaos
-            </a>
-            <a class="list-group-item list-group-item-action" href="#">
-              <i class="bi-check"></i>
-              Jaket
-            </a>
+            <?php foreach ($kategori as $k => $v) : ?>
+              <a class="list-group-item list-group-item-action" href="produk.php?kategori=<?= $k ?>">
+                <i class="bi-check"></i>
+                <?= $v ?>
+              </a>
+            <?php endforeach ?>
           </div>
         </div>
       </aside>
 
       <article class="col-lg-9">
-        <h4 class="border-bottom pb-2">Produk Rekomendasi</h4>
+        <h4 class="border-bottom pb-2 fw-bold">Produk Rekomendasi</h4>
         <div class="row">
-          <?php foreach ($gambar as $g) : ?>
+          <?php foreach ($rekomendasi_produk as $i => $p) : ?>
             <div class="col-lg-3 col-sm-4 col-6">
-              <a href="#" class="text-reset text-decoration-none">
+              <a href="detail.php?id=<?= $i + 1 ?>" class="text-reset text-decoration-none">
                 <div class="card mb-2">
-                  <img src="images/small1.jpg" class="card-img-top"></img>
+                  <img src="<?= $p['image'] ?>" class="card-img-top"></img>
                   <div class="card-body">
                     <div class="text-center">
-                      <h6 class="font-weight-bold"><?= $g['nama'] ?></h6>
-                      <span class="text-muted small"><?= $g['harga'] ?></span>
+                      <h6 class="font-weight-bold"><?= $p['nama'] ?></h6>
+                      <span class="text-muted small"><?= $p['harga'] ?></span>
                     </div>
                   </div>
                 </div>
