@@ -29,8 +29,8 @@ $gambar = [
 </head>
 
 <body class="d-flex flex-column vh-100">
-  <nav class="navbar navbar-expand navbar-light">
-    <div class="container mt-2 d-flex flex-column flex-sm-row border-bottom">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="container mt-2 d-flex flex-column flex-sm-row">
       <a class="navbar-brand" href="" style="font-size: 24px;">BAJUKITA</a>
 
       <div class="navbar-collapse" id="navbar">
