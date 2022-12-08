@@ -50,33 +50,97 @@
     <main class="container mb-5 mt-4">
         <h4 class="text-center fw-bold">Tim Kami</h4>
 
-        <section class="row m-auto mt-5 p-5 rounded">
+        <section class="row m-auto mt-2 p-5 rounded">
             <article class="col-12 col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center text-center mb-5">
                     <img src="images/ihsan.jpeg" class="rounded-2" style="object-fit: cover" alt="ihsan" width="250" height="250">
                     <span class="mt-2 mb-2" style="font-size: 18px">Muhammad Ihsan Permana</span>
-                    <span style="font-size: 15px;">15210103</span>
+                    <div class="row mt-3 justify-content-between">
+                        <div class="col">
+                            <a href="https://wa.me/+6281384032181" target="_blank">
+                                <i class="bi-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="https://www.instagram.com/iksanpermn/" target="_blank">
+                                <i class="bi-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" target="_blank">
+                                <i class="bi-google"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </article>
             <article class="col-12 col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center text-center mb-5">
                     <img src="images/tesyar.jpg" class="rounded-2" style="object-fit: cover" alt="tesyar" width="250" height="250">
                     <span class="mt-2 mb-2" style="font-size: 18px">Mohamad Tesyar Razbani</span>
-                    <span style="font-size: 15px;">15210264</span>
+                    <div class="row mt-3 justify-content-between">
+                        <div class="col">
+                            <a href="https://wa.me/+6281380611475" target="_blank">
+                                <i class="bi-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="https://www.instagram.com/raz31565/" target="_blank">
+                                <i class="bi-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" target="_blank">
+                                <i class="bi-google"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </article>
             <article class="col-12 col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center text-center mb-5">
                     <img src="images/diki.jpg" class="rounded-2" style="object-fit: cover" alt="diki" width="250" height="250">
                     <span class="mt-2 mb-2" style="font-size: 18px">M. Diki Ramlan</span>
-                    <span style="font-size: 15px;">15210278</span>
+                    <div class="row mt-3 justify-content-between">
+                        <div class="col">
+                            <a href="https://wa.me/+6282258403162" target="_blank">
+                                <i class="bi-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" target="_blank">
+                                <i class="bi-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" target="_blank">
+                                <i class="bi-google"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </article>
             <article class="col-12 col-md-6 col-xl-3">
                 <div class="d-flex flex-column align-items-center text-center mb-5">
                     <img src="images/nurul.jpg" class="rounded-2" style="object-fit: cover" alt="diki" width="250" height="250">
                     <span class="mt-2 mb-2" style="font-size: 18px">Nurul Fauziah</span>
-                    <span style="font-size: 15px;">15210262</span>
+                    <div class="row mt-3 justify-content-between">
+                        <div class="col">
+                            <a href="https://wa.me/+6283819099603" target="_blank">
+                                <i class="bi-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="https://www.instagram.com/ziaar933/" target="_blank">
+                                <i class="bi-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" target="_blank">
+                                <i class="bi-google"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </article>
         </section>
