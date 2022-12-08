@@ -108,7 +108,7 @@
                             </a>
                         </div>
                         <div class="col">
-                            <a href="#" target="_blank">
+                            <a href="https://www.instagram.com/m.diki_18/" target="_blank">
                                 <i class="bi-instagram"></i>
                             </a>
                         </div>

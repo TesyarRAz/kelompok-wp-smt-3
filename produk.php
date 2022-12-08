@@ -66,7 +66,7 @@ if (isset($_GET['cari']) && !empty($_GET['cari'])) {
       <article class="mb-1 d-flex justify-content-end">
         <form class="justify-content-end d-flex align-items-center gap-2" action="produk.php" method="GET">
           <div class="input-group">
-            <input type="text" class="form-control form-control-sm" placeholder="Masukan kata kunci" name="cari">
+            <input type="text" class="form-control form-control-sm" placeholder="Pencarian" name="cari">
             <button type="submit" class="btn btn-sm btn-dark">
               <i class="bi-search"></i>
             </button>
